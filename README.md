@@ -18,7 +18,7 @@ The activities cover different Node.js concepts, including project setup, npm pa
 
 - [N2: Modular Calculator](set1/n2-calculator/) - A command-line calculator that uses separate JavaScript modules to perform addition, subtraction, multiplication, division, and average calculations. It also handles division by zero, unknown operations, and invalid inputs.
 
-- N3: File Manager with fs and path (Pending)
+- [N3: File Manager with fs and path](set1/n3-file-manager/) - A command-line file manager that uses the built-in fs and path modules to create, read, update, delete, and list text files. It also displays file information and handles missing files.
 
 ## Set 2 - Advanced Node.js
 
@@ -63,6 +63,7 @@ The program displays my name and a welcome message in the terminal.
 
 - `picocolors` - A regular dependency used to display colored text in the terminal.
 - `nodemon` - A development dependency used to automatically restart Node.js programs when files change.
+
 
 ### N2 - Modular Calculator
 
@@ -128,6 +129,70 @@ node set1/n2-calculator/index.js power 12 8
 
 The program also handles missing numbers and invalid numerical inputs.
 
+
+### N3 - File Manager with fs and path
+
+1. Make sure Node.js is installed.
+2. Open a terminal in the repository's root folder.
+3. Run the following commands depending on the file operation.
+
+**Create a Text File**
+
+```powershell
+node set1/n3-file-manager/index.js create notes.txt "Hello"
+```
+
+**Read a Text File**
+
+```powershell
+node set1/n3-file-manager/index.js read notes.txt
+```
+
+**Update a Text File**
+
+```powershell
+node set1/n3-file-manager/index.js update notes.txt "Additional information"
+```
+
+**Delete a Text File**
+
+```powershell
+node set1/n3-file-manager/index.js delete notes.txt
+```
+
+**List All Text Files**
+
+```powershell
+node set1/n3-file-manager/index.js list
+```
+
+The program stores and manages text files inside the `files` folder.
+
+**File used:**
+
+- `index.js` - Contains the five file-management operations using the built-in fs and path modules.
+
+**Required Text Files:**
+
+- `history.txt` - Contains the third sample text.
+- `notes.txt` - Contains the original text and appended information.
+- `sample.txt` - Contains the second sample text.
+
+The program uses `fs.writeFileSync()`, `fs.readFileSync()`, `fs.appendFileSync()`, `fs.unlinkSync()`, and `fs.readdirSync()` to manage files.
+
+It also uses `path.join()`, `path.basename()`, and `path.extname()` to construct and display file information.
+
+**Error Handling**
+
+The program displays a clear message when the user tries to read or delete a file that does not exist.
+
+Example:
+
+```powershell
+node set1/n3-file-manager/index.js read missing.txt
+node set1/n3-file-manager/index.js delete missing.txt
+```
+
 ## Screenshots
 
 ### N1 - Project Setup and Package Management
@@ -143,6 +208,7 @@ The program also handles missing numbers and invalid numerical inputs.
 **Successful npm start Execution**
 
 ![N1 Successful npm start](set1/n1-setup/screenshots/N1_03_NPM_Start.png)
+
 
 ### N2 - Modular Calculator
 
@@ -174,6 +240,33 @@ The program also handles missing numbers and invalid numerical inputs.
 
 [N2 Unknown Operation Error](set1/n2-calculator/screenshots/N2_07_Unknown_Operation.png)
 
+
+### N3 - File Manager with fs and path
+
+**Create Text File**
+
+![N3 Create File](set1/n3-file-manager/screenshots/N3_01_Create.png)
+
+**Read Text File**
+
+[N3 Read File](set1/n3-file-manager/screenshots/N3_02_Read.png)
+
+**Update Text File**
+
+[N3 Update File](set1/n3-file-manager/screenshots/N3_03_Update.png)
+
+**Delete Text File**
+
+[N3 Delete File](set1/n3-file-manager/screenshots/N3_04_Delete.png)
+
+**List Text Files**
+
+[N3 List Files](set1/n3-file-manager/screenshots/N3_05_List.png)
+
+**File Not Found Error Handling**
+
+[N3 File Not Found](set1/n3-file-manager/screenshots/N3_06_File_Not_Found.png)
+
 ## Written Answers
 
 ### N1 - Project Setup and Package Management
@@ -184,4 +277,4 @@ The program also handles missing numbers and invalid numerical inputs.
 
 - **N1:** Program tested successfully; files and documentation prepared.
 - **N2:** Calculator functionality tested successfully; Git documentation and submission verification in progress.
-- **N3:** Pending development.
+- **N3:** All five file-management operations tested successfully; GitHub documentation and final commit in progress.
